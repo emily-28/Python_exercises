@@ -1,2 +1,23 @@
 #Useful commnads when working with excel 
 
+#Import module 
+import openpyxl
+
+#Create a New Workbook
+wb=openpyxl.Workbook()
+
+#Get sheet name by using this function
+
+wb.get_sheet_names()
+
+#To select an specific sheet by its name
+
+sheet1= wb.get_sheet_by_name('Sheet')
+
+#How to change or add data to specif cell 
+
+sheet1['A1']="This is cell A1"
+
+#To save workbook with use the save method
+
+wb.save('example2.xlsx')
