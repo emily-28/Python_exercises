@@ -1,7 +1,10 @@
 #Useful commnads when working with excel 
 
-#Import module 
 import openpyxl
+import os
+
+#to change folder  use OS
+os.chdir('c:\\Users\\yemim\\Documents\\Python Scripts')
 
 #Create a New Workbook
 wb=openpyxl.Workbook()
@@ -17,7 +20,24 @@ sheet1= wb.get_sheet_by_name('Sheet')
 #How to change or add data to specif cell 
 
 sheet1['A1']="This is cell A1"
+sheet1['A2']="Say hello to A2"
 
 #To save workbook with use the save method
-
 wb.save('example2.xlsx')
+
+#To open an existing workbook to make changes use this!
+wb2=openpyxl.load_workbook('example2.xlsx')
+
+#Make a change in a sheet without opening sheet
+sheet2= wb2.get_sheet_by_name('Sheet')
+sheet2['D2']="Say hello to D2"
+
+#Saving new sheet without opening neither old or newly created sheet
+wb2.save('example3.xlsx')
+
+#Add a new sheet to workbook. 
+wb2.create_sheet(index=0,title='My first sheet')
+
+#To change name of existing sheet use title
+sheet2.title='My new sheet name'
+
