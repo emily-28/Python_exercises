@@ -1,7 +1,12 @@
 #Useful commnads when working with excel 
+#You can find more documentation here https://openpyxl.readthedocs.io/en/stable/
 
-import openpyxl
-import os
+import openpyxl  
+import os  #to work with directories information
+
+
+#to know which is the current directory
+os.getcwd
 
 #to change folder  use OS
 os.chdir('c:\\Users\\yemim\\Documents\\Python Scripts')
@@ -18,9 +23,14 @@ wb.get_sheet_names()
 sheet1= wb.get_sheet_by_name('Sheet')
 
 #How to change or add data to specif cell 
-
 sheet1['A1']="This is cell A1"
 sheet1['A2']="Say hello to A2"
+
+#The cell object also have value, row and column as attribute
+sheet1['A1'].value
+sheet1['A1'].row
+sheet1['A1'].column
+
 
 #To save workbook with use the save method
 wb.save('example2.xlsx')
@@ -41,3 +51,5 @@ wb2.create_sheet(index=0,title='My first sheet')
 #To change name of existing sheet use title
 sheet2.title='My new sheet name'
 
+#to get which is the active worksheet
+wb2.active
