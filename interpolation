@@ -1,0 +1,6 @@
+#To simplify how to put together strings
+firstName= "Eli"
+
+#instead of using this
+print("hola"+firstName)
+print(f'hola {firstName} {3+5}')
