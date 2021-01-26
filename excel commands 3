@@ -1,0 +1,24 @@
+import openpyxl
+import os  #to work with directories information
+
+#to change folder  use OS
+os.chdir('c:\\Users\\yemim\\Documents\\Python Scripts')
+
+#To open an existing workbook to make changes use this!
+wb=openpyxl.load_workbook('example.xlsx')
+
+sheet=wb.active
+
+#to access values specific column or row, use object rows and columns attribute
+#This [1] means that I'm accesing column 2 of the sheet.
+list(sheet.columns)[1]
+
+#simple for loop to go through all values in SPECIF column 2
+for cellObj in list(sheet.columns)[1]:
+    print(cellObj.value)
+    
+list(sheet.rows)[1]
+
+#simple for loop to go through all values in SPECIFIC row 3
+for cellObj2 in list(sheet.rows)[2]:
+    print(cellObj2.value)
