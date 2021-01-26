@@ -1,4 +1,4 @@
-#Excel command 5
+#Excel commands 5
 
 ##Section 1: Read spreadsheet data
 ##Section 2: Populate the Data Structuree
@@ -53,3 +53,12 @@ resultsFile.write('allData= '+pprint.pformat(countyData))
 resultsFile.close()
 
 print('Done!')
+
+
+###Use the following code to test the Data Structure created and saved in the file census2010.py ####
+
+import census2010
+
+census2010.allData['AK']['Anchorage']
+anchoragePop=census2010.allData['AK']['Anchorage']['pop']
+print('The 2010 population of Anchorage was  ' +str(anchoragePop))
